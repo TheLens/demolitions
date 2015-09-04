@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  {% include '_head.html' %}
+
+  <body class="lens-demos">
+
+    {% include '_banner.html' %}
+    <div class="row wrapper" id="wrapper">
+      <div class="small-12 medium-6 large-5 columns story-wrapper" id="story-wrapper">
+        {% include '_nav.html' %}
+        {% include '_intro.html' %}
+        {% include '_about.html' %}
+        {% include '_story.html' %}
+        {% include '_photo.html' %}
+      </div>
+      <div class="small-12 medium-6 large-7 columns map-wrapper" id="map-wrapper">
+        {% include '_map.html' %}
+      </div>
+    </div>
+
+    {% include '_photo-gallery.html' %}
+
+    {% include '_js.html' %}
+
+  </body>
+</html>

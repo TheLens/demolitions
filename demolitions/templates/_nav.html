@@ -1,0 +1,18 @@
+<div class="small-12 columns nav" id="nav">
+  <div class="row">
+    <div class="small-2 medium-3 columns previous" id="previous">
+      <button class="previous-button" id="previous-button"><i class="fa fa-arrow-left"></i> <span class="hide-for-small-only">Previous</span></button>
+    </div>
+    <div class="small-8 medium-6 text-center columns select-wrapper" id="select-wrapper">
+      <select class="select" id="select">
+        <option selected value="">Stories</option>
+        {% for story in stories %}
+          <option value="{{ story.slug }}">{{ story.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="small-2 medium-3 columns text-right next" id="next">
+      <button class="next-button" id="next-button"><span class="hide-for-small-only">Next</span> <i class="fa fa-arrow-right"></i></button>
+    </div>
+  </div>
+</div>

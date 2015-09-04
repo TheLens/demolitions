@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  {% include '_head.html' %}
+
+  <style>
+    /* Mobile */
+    @media screen and (max-width: 641px) {
+      html,
+      body {
+        height: 800px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* .lens-demos */
+      .wrapper {
+        overflow-y: auto;
+      }
+
+      .banner{
+        border-top: 1px solid #a8a299;
+      }
+    }
+
+    /* Medium */
+    @media screen and (min-width: 642px) and (max-width: 1025px) {
+      html,
+      body {
+        height: 900px;
+      }
+    }
+
+    /* Large */
+    @media screen and (min-width: 1026px) and (max-width: 1441px) {
+      html,
+      body {
+        height: 900px;
+      }
+
+      .story-photo-buffer {
+        height: 100px;
+      }
+    }
+
+    /* Large */
+    @media screen and (min-width: 1442px) {
+      html,
+      body {
+        height: 1000px;
+      }
+
+      .story-photo-buffer {
+        height: 100px;
+      }
+    }
+  </style>
+
+  <body class="lens-demos">
+
+    {% include '_banner.html' %}
+    <div class="row wrapper" id="wrapper">
+      <div class="small-12 medium-6 large-5 columns story-wrapper" id="story-wrapper">
+        {% include '_nav.html' %}
+        {% include '_intro.html' %}
+        {% include '_about.html' %}
+        {% include '_story.html' %}
+        {% include '_photo.html' %}
+      </div>
+      <div class="small-12 medium-6 large-7 columns map-wrapper" id="map-wrapper">
+        {% include '_map.html' %}
+      </div>
+    </div>
+
+    {% include '_photo-gallery.html' %}
+
+    {% include '_js.html' %}
+
+    <script type="text/javascript" src="js/pym.min.js"></script>
+    <script type="text/javascript">var pymChild = new pym.Child();</script>
+
+  </body>
+</html>

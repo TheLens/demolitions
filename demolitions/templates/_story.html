@@ -1,0 +1,84 @@
+{% for story in stories %}
+  <div class="small-12 columns story" id="{{ story.slug }}">
+    <div class="story-photo-buffer"></div>
+    <div class="row">
+      <p class="small-12 columns head">
+        {{ story.head }}
+      </p>
+    </div>
+
+    {% for photo in story.photos %}
+    {% if loop.index == 1 %}
+      <div class="row">
+        <div class="small-12 columns story-image" id="story-image">
+          <div class="photo-gallery" id="photo-gallery" data-photo-index="{{ loop.index }}">
+            <div class="image-wrapper" id="image-wrapper" data-photo-index="{{ loop.index }}">
+              <img data-src="https://s3-us-west-2.amazonaws.com/projects.thelensnola.org/demolitions/images/{{ story.slug }}/{{ photo.filename.small }}" data-photo-index="{{ loop.index }}" alt="{{ photo.caption }}" />
+            </div>
+            <div class="zoom-icon hover-only" id="zoom-icon" data-photo-index="{{ loop.index }}">
+              <i class="fa fa-search-plus" data-photo-index="{{ loop.index }}"></i>
+            </div>
+
+          </div>
+
+          <p class="cutline">
+            {{ photo.date }} <span class="right source">{{ photo.source }}</span>
+          </p>
+          <p class="cutline">
+            {{ photo.caption }}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+
+    {% for photo in story.photos %}
+    {% if loop.index == 2 %}
+      <div class="row">
+        <div class="small-12 columns story-image" id="story-image">
+          <div class="photo-gallery" id="photo-gallery" data-photo-index="{{ loop.index }}">
+            <div class="image-wrapper" id="image-wrapper" data-photo-index="{{ loop.index }}">
+              <img data-src="https://s3-us-west-2.amazonaws.com/projects.thelensnola.org/demolitions/images/{{ story.slug }}/{{ photo.filename.small }}" data-photo-index="{{ loop.index }}" alt="{{ photo.caption }}" />
+            </div>
+            <div class="zoom-icon hover-only" id="zoom-icon" data-photo-index="{{ loop.index }}">
+              <i class="fa fa-search-plus" data-photo-index="{{ loop.index }}"></i>
+            </div>
+
+          </div>
+
+          <p class="cutline">
+            {{ photo.date }} <span class="right source">{{ photo.source }}</span>
+          </p>
+        </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="row">
+      <p class="small-12 columns subhead">
+        {{ story.subhead }}
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns body" id="body">
+        {{ story.body }}
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="small-12 columns text-right byline">
+        —By {{ story.byline }}
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="small-12 show-for-small-only columns">
+        <div class="row">
+          <div class="small-12 columns border"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endfor %}
