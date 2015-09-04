@@ -1,0 +1,11 @@
+*.pyc
+*.DS_Store
+*.log
+*.out
+*.map
+*.sass-cache
+*.sass-cache/
+*.sass-cache/*
+data
+demolitions/static/images
+misc
